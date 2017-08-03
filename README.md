@@ -13,3 +13,7 @@ smart-http-proxy
 export UPSTREAM_PROXY_HOST_PORT=28119
 export UPSTREAM_PROXY_HOST_PORT=<e.g. http-to-socks.local:28118>
 ```
+
+## debug
+
+see: http://config.privoxy.org/show-url-info

@@ -15,6 +15,8 @@ services:
     environment:
     - HTTP_TO_SOCKS_PORT=${HTTP_TO_SOCKS_PORT:-28118}
     - SOCKS_PROXY=${SOCKS_PROXY}
+    volumes:
+    - volume-http-to-socks:/var/log/privoxy
   smart-http-proxy:
     image: ${DOCKER_REGISTRY:-home1oss}/privoxy:3.0.24
     restart: always
@@ -25,8 +27,14 @@ services:
     environment:
     - SMART_HTTP_PROXY_PORT=${SMART_HTTP_PROXY_PORT:-28119}
     - UPSTREAM_PROXY_HOST_PORT=${HTTP_TO_SOCKS_DOMAIN:-http-to-socks}.${INFRASTRUCTURE:-local}:${HTTP_TO_SOCKS_PORT:-28118}
+    volumes:
+    - volume-smart-http-proxy:/var/log/privoxy
 
 networks:
   default:
     external:
       name: oss-network
+
+volumes:
+  volume-http-to-socks: {}
+  volume-smart-http-proxy: {}
