@@ -17,3 +17,12 @@ export UPSTREAM_PROXY_HOST_PORT=<e.g. http-to-socks.local:28118>
 ## debug
 
 see: http://config.privoxy.org/show-url-info
+
+# References
+
+https://github.com/linuxserver/docker-polipo
+https://hub.docker.com/r/lsiocommunity/polipo/
+https://zh.wikipedia.org/zh-hans/Polipo
+
+3proxy
+tinyproxy
